@@ -90,7 +90,7 @@
     const containers = document.querySelectorAll('.countdown');
     if (!containers.length) return;
 
-    const target = new Date('2026-09-06T00:00:00').getTime();
+    const target = new Date('2026-09-05T00:00:00').getTime();
 
     function update() {
       const diff = target - Date.now();
