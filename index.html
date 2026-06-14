@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elykia — Une famille pour ceux qui en ont besoin</title>
+  <meta name="description" content="Elykia est une association humanitaire basée à Pointe-Noire, Congo. Éducation, aide sociale et développement communautaire.">
+
+  <meta property="og:title"       content="Elykia — Association humanitaire">
+  <meta property="og:description" content="Une famille pour ceux qui en ont besoin — Pointe-Noire, République du Congo">
+  <meta property="og:type"        content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Montserrat:wght@400;600;700;800&family=Lato:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header transparent" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Elykia — Accueil">
+        <img src="assets/images/logo.png" alt="" onerror="this.style.display='none'">
+        <span class="logo-text">Elykia</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="index.html"       class="nav-link active">Accueil</a>
+        <a href="a-propos.html"    class="nav-link">À propos</a>
+        <a href="actions.html"     class="nav-link">Nos actions</a>
+        <a href="partenaires.html" class="nav-link">Partenaires</a>
+        <a href="galerie.html"     class="nav-link">Galerie</a>
+        <a href="contact.html"     class="nav-link">Contact</a>
+        <a href="contact.html#don" class="btn btn-primary btn-sm nav-cta">Soutenir</a>
+      </nav>
+
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" aria-label="Bannière principale">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <img src="assets/images/logo.png" alt="Logo Elykia" class="hero-logo" onerror="this.style.display='none'">
+        <h1 class="hero-title">Elykia</h1>
+        <p class="hero-subtitle">Une famille pour ceux qui en ont besoin</p>
+
+        <div class="hero-cta">
+          <a href="contact.html#don"      class="btn btn-primary btn-lg">Faire un don</a>
+          <a href="partenaires.html"       class="btn btn-ghost btn-lg">Devenir partenaire</a>
+          <a href="contact.html#benevole" class="btn btn-ghost btn-lg">Rejoindre l'équipe</a>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <i data-lucide="chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- ==================== CHIFFRES D'IMPACT ==================== -->
+    <section class="section section-white" aria-labelledby="impact-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Notre impact</span>
+          <h2 class="section-title" id="impact-title">Ce que nous accomplirons ensemble</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card-impact reveal reveal-delay-1">
+            <div class="impact-icon-wrap">
+              <i data-lucide="graduation-cap"></i>
+            </div>
+            <div class="impact-number" data-target="300">0</div>
+            <div class="impact-label">enfants bénéficiaires<br>de kits scolaires prévus</div>
+          </div>
+
+          <div class="card-impact reveal reveal-delay-2">
+            <div class="impact-icon-wrap">
+              <i data-lucide="heart"></i>
+            </div>
+            <div class="impact-number" data-target="5" data-prefix="+">0</div>
+            <div class="impact-label">actions humanitaires<br>à mener</div>
+          </div>
+
+          <div class="card-impact reveal reveal-delay-3">
+            <div class="impact-icon-wrap">
+              <i data-lucide="users"></i>
+            </div>
+            <div class="impact-number" style="font-size:2.2rem;">∞</div>
+            <div class="impact-label">communauté<br>en croissance</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== QUI NOUS SOMMES ==================== -->
+    <section class="section section-warm" aria-labelledby="about-title">
+      <div class="container">
+        <div class="two-col">
+          <div class="reveal-left">
+            <span class="label">Notre identité</span>
+            <h2 class="section-title" id="about-title">Qui sommes-nous&nbsp;?</h2>
+            <div class="divider"></div>
+            <p>Elykia est une association humanitaire fondée à Pointe-Noire, en République du Congo. Notre nom signifie <strong>« espoir »</strong> — et c'est précisément ce que nous voulons offrir à chaque personne que nous rencontrons.</p>
+            <p>Nous croyons que chaque enfant mérite d'aller à l'école avec les outils nécessaires, et que chaque communauté mérite de grandir avec dignité.</p>
+            <a href="a-propos.html" class="btn btn-secondary" style="margin-top:0.5rem;">
+              En savoir plus
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="reveal-right">
+            <div class="image-zone" style="min-height:320px;">
+              <img src="assets/images/team/equipe.jpg" alt="L'équipe Elykia" loading="lazy">
+              <div class="image-zone-placeholder">
+                <i data-lucide="image"></i>
+                <span>Photo à ajouter</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== NOS ACTIONS ==================== -->
+    <section class="section section-white" aria-labelledby="actions-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Ce que nous ferons</span>
+          <h2 class="section-title" id="actions-title">Nos domaines d'action</h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">Quatre piliers pour changer des vies durablement.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card card-action reveal reveal-delay-1">
+            <div class="icon-circle">
+              <i data-lucide="book-open"></i>
+            </div>
+            <h3>Éducation</h3>
+            <p>Nous distribuerons des kits scolaires, soutiendrons les élèves défavorisés et promouvrons le droit à l'éducation.</p>
+          </div>
+
+          <div class="card card-action reveal reveal-delay-2">
+            <div class="icon-circle">
+              <i data-lucide="heart"></i>
+            </div>
+            <h3>Humanitaire</h3>
+            <p>Nous apporterons une aide d'urgence aux familles en détresse, distribuerons des vivres et assurerons un accompagnement médical de base.</p>
+          </div>
+
+          <div class="card card-action reveal reveal-delay-3">
+            <div class="icon-circle">
+              <i data-lucide="home"></i>
+            </div>
+            <h3>Social</h3>
+            <p>Nous accompagnerons les personnes vulnérables, soutiendrons les familles monoparentales et faciliterons l'insertion sociale.</p>
+          </div>
+
+          <div class="card card-action reveal reveal-delay-4">
+            <div class="icon-circle">
+              <i data-lucide="globe"></i>
+            </div>
+            <h3>Développement</h3>
+            <p>Nous lancerons des projets communautaires, formerons des acteurs locaux et développerons des initiatives durables.</p>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top:var(--space-md);">
+          <a href="actions.html" class="btn btn-secondary">
+            Voir toutes nos actions
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CITATION ==================== -->
+    <section class="section-quote" aria-label="Notre message">
+      <div class="container">
+        <div class="reveal">
+          <div class="quote-icon">
+            <i data-lucide="quote"></i>
+          </div>
+          <blockquote>
+            Chez Elykia, chaque geste compte, chaque sourire semé est une graine d'espoir pour demain.
+          </blockquote>
+          <cite>Association Elykia — Pointe-Noire, Congo</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJET VEDETTE ==================== -->
+    <section class="section section-warm" aria-labelledby="projet-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Événement 2026</span>
+          <h2 class="section-title" id="projet-title">Grande Célébration Elykia</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="projet-vedette reveal">
+          <div class="projet-label">Événement phare</div>
+          <h3>Grande Célébration Communautaire 2026</h3>
+
+          <div class="projet-meta">
+            <div class="projet-meta-item">
+              <i data-lucide="calendar"></i>
+              <span>6 septembre 2026</span>
+            </div>
+            <div class="projet-meta-item">
+              <i data-lucide="map-pin"></i>
+              <span>Pointe-Noire, République du Congo</span>
+            </div>
+            <div class="projet-meta-item">
+              <i data-lucide="target"></i>
+              <span>Rassembler, célébrer, agir</span>
+            </div>
+          </div>
+
+          <p style="max-width:560px;color:rgba(255,255,255,0.75);font-size:0.95rem;margin-bottom:var(--space-md);">
+            Un événement pour célébrer nos avancées, renforcer les liens communautaires et lancer de nouveaux projets. Rejoignez-nous comme sponsor.
+          </p>
+
+          <div class="countdown" aria-live="polite" aria-label="Compte à rebours" style="margin-bottom:var(--space-md);justify-content:flex-start;"></div>
+
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <a href="partenaires.html" class="btn btn-primary">Devenir sponsor</a>
+            <a href="actions.html#celebration" class="btn btn-ghost">En savoir plus</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="" onerror="this.style.display='none'">
+            <span class="logo-text">Elykia</span>
+          </a>
+          <p class="footer-slogan">Une famille pour ceux qui en ont besoin.</p>
+          <p style="font-size:var(--fs-xs);color:rgba(255,255,255,0.35);font-family:var(--font-heading);letter-spacing:0.03em;">
+            Association humanitaire — Pointe-Noire, République du Congo
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <nav class="footer-nav" aria-label="Navigation footer">
+            <a href="index.html">Accueil</a>
+            <a href="a-propos.html">À propos</a>
+            <a href="actions.html">Nos actions</a>
+            <a href="partenaires.html">Partenaires</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-info">
+            <div class="fi">
+              <i data-lucide="map-pin"></i>
+              <span>Pointe-Noire, Congo</span>
+            </div>
+            <a href="mailto:contact@elykia.org" class="fi">
+              <i data-lucide="mail"></i>
+              <span>contact@elykia.org</span>
+            </a>
+          </div>
+          <div class="social-links" aria-label="Réseaux sociaux">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i data-lucide="facebook"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i data-lucide="instagram"></i>
+            </a>
+            <a href="https://wa.me/" class="social-link" aria-label="WhatsApp" style="background:rgba(37,211,102,0.15);border-color:rgba(37,211,102,0.25);color:#25D366;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Association Elykia — Tous droits réservés</span>
+        <span>Fait avec soin pour la communauté</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flottant -->
+  <a href="https://wa.me/" class="whatsapp-float" aria-label="Nous contacter sur WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+    </svg>
+  </a>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/counter.js"></script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Bénévolat — Elykia</title>
+  <meta name="description" content="Contactez l'Association Elykia, rejoignez nos bénévoles ou faites un don. Pointe-Noire, République du Congo.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Montserrat:wght@400;600;700;800&family=Lato:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+  <header class="site-header scrolled" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.png" alt="" onerror="this.style.display='none'">
+        <span class="logo-text">Elykia</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="index.html"       class="nav-link">Accueil</a>
+        <a href="a-propos.html"    class="nav-link">À propos</a>
+        <a href="actions.html"     class="nav-link">Nos actions</a>
+        <a href="partenaires.html" class="nav-link">Partenaires</a>
+        <a href="galerie.html"     class="nav-link">Galerie</a>
+        <a href="contact.html"     class="nav-link active">Contact</a>
+        <a href="#don"             class="btn btn-primary btn-sm nav-cta">Soutenir</a>
+      </nav>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <i data-lucide="chevron-right" style="width:12px;height:12px;color:rgba(255,255,255,0.35);"></i>
+          <span style="color:var(--color-gold);">Contact</span>
+        </nav>
+        <h1>Contact & Bénévolat</h1>
+        <p>Nous sommes à votre écoute — écrivez-nous, rejoignez-nous.</p>
+      </div>
+    </div>
+
+    <!-- COORDONNÉES -->
+    <section class="section section-white" id="coordonnees" aria-labelledby="coord-title">
+      <div class="container">
+        <div class="grid-2">
+
+          <!-- Infos -->
+          <div class="reveal-left">
+            <span class="label">Nous trouver</span>
+            <h2 class="section-title" id="coord-title">Nos coordonnées</h2>
+            <div class="divider"></div>
+            <p style="color:var(--color-text-soft);font-size:0.95rem;margin-bottom:var(--space-md);">N'hésitez pas à nous contacter pour toute question, demande de partenariat, ou simplement pour en savoir plus.</p>
+
+            <div class="contact-item">
+              <div class="icon-circle">
+                <i data-lucide="map-pin"></i>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label">Adresse</span>
+                <span class="contact-value">Pointe-Noire, République du Congo</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon-circle">
+                <i data-lucide="mail"></i>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label">Email</span>
+                <a href="mailto:contact@elykia.org" class="contact-value">contact@elykia.org</a>
+                <span style="font-size:var(--fs-xs);color:var(--color-text-muted);margin-top:0.15rem;">[Remplacez par votre email]</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon-circle">
+                <i data-lucide="phone"></i>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label">Téléphone</span>
+                <span class="contact-value" style="color:var(--color-text-muted);">[Numéro à remplir]</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon-circle" style="background:rgba(37,211,102,0.10);color:var(--color-whatsapp);">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                </svg>
+              </div>
+              <div class="contact-text">
+                <span class="contact-label">WhatsApp</span>
+                <a href="https://wa.me/" class="btn btn-whatsapp btn-sm" style="margin-top:0.4rem;display:inline-flex;">Écrire un message</a>
+              </div>
+            </div>
+
+            <div style="margin-top:var(--space-sm);">
+              <span style="font-family:var(--font-heading);font-size:var(--fs-xs);font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--color-text-muted);display:block;margin-bottom:0.6rem;">Réseaux sociaux</span>
+              <div class="social-links">
+                <a href="#" class="social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                <a href="#" class="social-link" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carte visuelle -->
+          <div class="reveal-right">
+            <div class="card" style="text-align:center;padding:var(--space-lg);">
+              <div class="icon-circle" style="margin:0 auto var(--space-sm);width:64px;height:64px;">
+                <i data-lucide="globe" style="width:28px;height:28px;"></i>
+              </div>
+              <h3 style="color:var(--color-primary-dark);margin-bottom:0.35rem;">Pointe-Noire</h3>
+              <p style="color:var(--color-text-muted);font-size:0.875rem;font-family:var(--font-heading);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;">République du Congo</p>
+              <p style="font-size:0.875rem;color:var(--color-text-soft);margin-top:var(--space-sm);line-height:1.65;">Nous opérons principalement dans la région de Pointe-Noire et étendons progressivement notre impact aux zones voisines.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DON -->
+    <section class="section section-warm" id="don" aria-labelledby="don-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Soutenir Elykia</span>
+          <h2 class="section-title" id="don-title">Faire un don</h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">Chaque contribution, quelle que soit sa taille, change une vie.</p>
+        </div>
+
+        <div class="grid-3 reveal">
+          <div class="card" style="display:flex;flex-direction:column;gap:0.75rem;align-items:flex-start;">
+            <div class="icon-circle"><i data-lucide="graduation-cap"></i></div>
+            <h3 style="font-size:1rem;">Un kit scolaire</h3>
+            <p style="font-size:0.875rem;color:var(--color-text-soft);margin:0;">Permet à un enfant d'aborder sa rentrée avec tout le nécessaire.</p>
+          </div>
+          <div class="card" style="display:flex;flex-direction:column;gap:0.75rem;align-items:flex-start;border:1.5px solid var(--color-gold);">
+            <div class="icon-circle"><i data-lucide="users"></i></div>
+            <h3 style="font-size:1rem;">Une famille aidée</h3>
+            <p style="font-size:0.875rem;color:var(--color-text-soft);margin:0;">Un soutien alimentaire ou matériel pour traverser une période difficile.</p>
+          </div>
+          <div class="card" style="display:flex;flex-direction:column;gap:0.75rem;align-items:flex-start;">
+            <div class="icon-circle"><i data-lucide="sprout"></i></div>
+            <h3 style="font-size:1rem;">Un projet communautaire</h3>
+            <p style="font-size:0.875rem;color:var(--color-text-soft);margin:0;">Contribuer à construire quelque chose de durable pour toute une communauté.</p>
+          </div>
+        </div>
+
+        <div class="text-center reveal" style="margin-top:var(--space-md);">
+          <p style="color:var(--color-text-soft);font-size:0.875rem;margin-bottom:var(--space-sm);">Pour effectuer un don, contactez-nous directement :</p>
+          <div style="display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap;">
+            <a href="https://wa.me/" class="btn btn-whatsapp btn-lg">Don via WhatsApp</a>
+            <a href="mailto:contact@elykia.org?subject=Don - Association Elykia" class="btn btn-secondary btn-lg">Don par email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULAIRE BÉNÉVOLAT -->
+    <section class="section section-white" id="benevole" aria-labelledby="benevole-title">
+      <div class="container">
+        <div class="grid-2" style="align-items:start;">
+
+          <div class="reveal-left">
+            <span class="label">Rejoindre l'équipe</span>
+            <h2 class="section-title" id="benevole-title">Devenir bénévole</h2>
+            <div class="divider"></div>
+            <p style="color:var(--color-text-soft);font-size:0.95rem;">Elykia, c'est avant tout une communauté de personnes qui décident d'agir. Nous accueillons des bénévoles avec toutes sortes de compétences.</p>
+
+            <h3 style="font-size:0.875rem;font-family:var(--font-heading);text-transform:uppercase;letter-spacing:0.07em;color:var(--color-text-muted);margin-top:var(--space-md);margin-bottom:0.75rem;">Ce que vous pouvez apporter</h3>
+            <ul class="avantages-list">
+              <li><span class="check-icon"><i data-lucide="check"></i></span>Aide lors des distributions et événements</li>
+              <li><span class="check-icon"><i data-lucide="check"></i></span>Compétences en communication ou design</li>
+              <li><span class="check-icon"><i data-lucide="check"></i></span>Expertise juridique, médicale ou pédagogique</li>
+              <li><span class="check-icon"><i data-lucide="check"></i></span>Mobilisation de votre réseau personnel</li>
+              <li><span class="check-icon"><i data-lucide="check"></i></span>Soutien logistique et administratif</li>
+            </ul>
+          </div>
+
+          <div class="reveal-right">
+            <div class="card" style="padding:var(--space-md);">
+              <h3 style="color:var(--color-primary-dark);margin-bottom:var(--space-sm);font-size:1.1rem;">Candidature bénévole</h3>
+
+              <form data-elykia-form aria-label="Formulaire de candidature bénévole" novalidate>
+                <div class="form-group">
+                  <label class="form-label" for="nom">Nom complet <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                  <input class="form-control" type="text" id="nom" name="nom" placeholder="Votre nom et prénom" required minlength="2">
+                  <span class="form-error" role="alert"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="email">Email <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                  <input class="form-control" type="email" id="email" name="email" placeholder="votre@email.com" required data-validate="email">
+                  <span class="form-error" role="alert"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="telephone">Téléphone</label>
+                  <input class="form-control" type="tel" id="telephone" name="telephone" placeholder="+242 06 XXX XXXX" data-validate="phone">
+                  <span class="form-error" role="alert"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="message">Motivation <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                  <textarea class="form-control" id="message" name="message" placeholder="Parlez-nous de vous et de votre motivation à rejoindre Elykia..." required minlength="20"></textarea>
+                  <span class="form-error" role="alert"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                  Envoyer ma candidature
+                  <i data-lucide="send"></i>
+                </button>
+
+                <div class="form-success" role="status" tabindex="-1">
+                  <div class="form-success-icon"><i data-lucide="check-circle"></i></div>
+                  <strong>Merci pour votre intérêt !</strong>
+                  <p style="margin-top:0.5rem;font-weight:400;color:var(--color-text-soft);font-size:0.9rem;">Nous vous recontacterons très prochainement.</p>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULAIRE CONTACT GÉNÉRAL -->
+    <section class="section section-warm" id="contact-form" aria-labelledby="contact-form-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Une question ?</span>
+          <h2 class="section-title" id="contact-form-title">Nous contacter</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div style="max-width:600px;margin-inline:auto;" class="reveal">
+          <div class="card">
+            <form data-elykia-form aria-label="Formulaire de contact" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="c-nom">Nom complet <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                <input class="form-control" type="text" id="c-nom" name="nom" placeholder="Votre nom" required minlength="2">
+                <span class="form-error" role="alert"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c-email">Email <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                <input class="form-control" type="email" id="c-email" name="email" placeholder="votre@email.com" required data-validate="email">
+                <span class="form-error" role="alert"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c-sujet">Sujet</label>
+                <input class="form-control" type="text" id="c-sujet" name="sujet" placeholder="Objet de votre message">
+                <span class="form-error" role="alert"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c-message">Message <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                <textarea class="form-control" id="c-message" name="message" placeholder="Votre message..." required minlength="10"></textarea>
+                <span class="form-error" role="alert"></span>
+              </div>
+
+              <button type="submit" class="btn btn-secondary" style="width:100%;justify-content:center;">
+                Envoyer le message
+                <i data-lucide="send"></i>
+              </button>
+
+              <div class="form-success" role="status" tabindex="-1">
+                <div class="form-success-icon"><i data-lucide="check-circle"></i></div>
+                <strong>Message envoyé !</strong>
+                <p style="margin-top:0.5rem;font-weight:400;color:var(--color-text-soft);font-size:0.9rem;">Nous vous répondrons dans les 48 heures.</p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="" onerror="this.style.display='none'">
+            <span class="logo-text">Elykia</span>
+          </a>
+          <p class="footer-slogan">Une famille pour ceux qui en ont besoin.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <nav class="footer-nav">
+            <a href="index.html">Accueil</a>
+            <a href="a-propos.html">À propos</a>
+            <a href="actions.html">Nos actions</a>
+            <a href="partenaires.html">Partenaires</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-info">
+            <div class="fi"><i data-lucide="map-pin"></i><span>Pointe-Noire, Congo</span></div>
+            <a href="mailto:contact@elykia.org" class="fi"><i data-lucide="mail"></i><span>contact@elykia.org</span></a>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Association Elykia — Tous droits réservés</span>
+        <span>Fait avec soin pour la communauté</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/" class="whatsapp-float" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+    </svg>
+  </a>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/form.js"></script>
+</body>
+</html>

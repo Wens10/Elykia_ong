@@ -1,0 +1,72 @@
+/* ============================================================
+   ELYKIA — Design Tokens (palette adoucie)
+   ============================================================ */
+
+:root {
+  /* --- Palette principale — tons désaturés, raffinés --- */
+  --color-primary:       #4A7C63;   /* Vert sauge doux */
+  --color-primary-light: #72A98A;   /* Vert menthe */
+  --color-primary-dark:  #253D30;   /* Forêt profonde */
+  --color-gold:          #B5843E;   /* Ambre doré patiné */
+  --color-gold-light:    #EAD9B0;   /* Crème sable */
+  --color-warm-white:    #F5F3EF;   /* Ivoire chaud */
+  --color-surface:       #FFFFFF;
+  --color-text-main:     #1A2820;   /* Presque noir vert */
+  --color-text-soft:     #697870;   /* Gris olive */
+  --color-text-muted:    #9AABA4;
+  --color-white:         #FFFFFF;
+
+  /* --- Niveaux partenaires (désaturés) --- */
+  --color-bronze:  #A0744A;
+  --color-silver:  #8A9BA5;
+  --color-or:      #B5843E;
+  --color-platine: #6E5FAA;
+
+  /* --- Utilitaires --- */
+  --color-whatsapp: #25D366;
+  --color-overlay:  rgba(30, 60, 44, 0.72);
+  --color-border:   rgba(74, 124, 99, 0.13);
+  --color-border-light: rgba(74, 124, 99, 0.07);
+
+  /* --- Typographie --- */
+  --font-display:  'Playfair Display', Georgia, serif;
+  --font-heading:  'Montserrat', Arial, sans-serif;
+  --font-body:     'Lato', Arial, sans-serif;
+
+  --fs-hero:   clamp(2.6rem, 5.5vw, 4.5rem);
+  --fs-h1:     clamp(1.9rem, 3.5vw, 2.8rem);
+  --fs-h2:     clamp(1.5rem, 2.5vw, 2rem);
+  --fs-h3:     clamp(1.1rem, 1.8vw, 1.35rem);
+  --fs-body:   1rem;
+  --fs-small:  0.875rem;
+  --fs-xs:     0.8rem;
+
+  /* --- Rayons --- */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   24px;
+  --radius-full: 9999px;
+
+  /* --- Ombres (très subtiles) --- */
+  --shadow-card:  0 2px 16px rgba(37, 61, 48, 0.07);
+  --shadow-hover: 0 6px 28px rgba(37, 61, 48, 0.12);
+  --shadow-hero:  0 8px 48px rgba(0, 0, 0, 0.10);
+  --shadow-btn:   0 2px 10px rgba(181, 132, 62, 0.22);
+
+  /* --- Espacement --- */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  6rem;
+  --space-2xl: 8rem;
+
+  /* --- Layout --- */
+  --container-max: 1200px;
+  --header-h:      68px;
+
+  /* --- Transitions --- */
+  --transition-fast:   140ms ease;
+  --transition-normal: 240ms ease;
+  --transition-slow:   380ms ease;
+}

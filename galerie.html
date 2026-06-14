@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie — Elykia</title>
+  <meta name="description" content="Photos des actions humanitaires et communautaires de l'Association Elykia en République du Congo.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Montserrat:wght@400;600;700;800&family=Lato:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+  <header class="site-header scrolled" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.png" alt="" onerror="this.style.display='none'">
+        <span class="logo-text">Elykia</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="index.html"       class="nav-link">Accueil</a>
+        <a href="a-propos.html"    class="nav-link">À propos</a>
+        <a href="actions.html"     class="nav-link">Nos actions</a>
+        <a href="partenaires.html" class="nav-link">Partenaires</a>
+        <a href="galerie.html"     class="nav-link active">Galerie</a>
+        <a href="contact.html"     class="nav-link">Contact</a>
+        <a href="contact.html#don" class="btn btn-primary btn-sm nav-cta">Soutenir</a>
+      </nav>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <i data-lucide="chevron-right" style="width:12px;height:12px;color:rgba(255,255,255,0.35);"></i>
+          <span style="color:var(--color-gold);">Galerie</span>
+        </nav>
+        <h1>Notre galerie</h1>
+        <p>Les moments qui racontent notre histoire — en images.</p>
+      </div>
+    </div>
+
+    <!-- GALERIE -->
+    <section class="section section-white" aria-labelledby="galerie-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="label">Photos</span>
+          <h2 class="section-title" id="galerie-title">Nos actions en images</h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">Cliquez sur une photo pour l'agrandir. Naviguez avec les flèches ou le clavier.</p>
+        </div>
+
+        <!-- Grille générée par gallery.js -->
+        <div id="galleryGrid" class="gallery-grid" role="list" aria-label="Galerie photos Elykia"></div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-warm" aria-label="Partager">
+      <div class="container">
+        <div class="two-col" style="align-items:center;">
+          <div class="reveal-left">
+            <span class="label">Contribuer</span>
+            <h2 class="section-title">Vous avez des photos à partager&nbsp;?</h2>
+            <p style="color:var(--color-text-soft);font-size:0.95rem;">Bénévoles, partenaires — envoyez-nous vos photos d'actions pour enrichir cette galerie et témoigner de notre impact.</p>
+          </div>
+          <div class="reveal-right" style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <a href="https://wa.me/" class="btn btn-whatsapp">Envoyer via WhatsApp</a>
+            <a href="contact.html"   class="btn btn-secondary">Nous contacter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox (généré par gallery.js) -->
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="" onerror="this.style.display='none'">
+            <span class="logo-text">Elykia</span>
+          </a>
+          <p class="footer-slogan">Une famille pour ceux qui en ont besoin.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <nav class="footer-nav">
+            <a href="index.html">Accueil</a>
+            <a href="a-propos.html">À propos</a>
+            <a href="actions.html">Nos actions</a>
+            <a href="partenaires.html">Partenaires</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-info">
+            <div class="fi"><i data-lucide="map-pin"></i><span>Pointe-Noire, Congo</span></div>
+            <a href="mailto:contact@elykia.org" class="fi"><i data-lucide="mail"></i><span>contact@elykia.org</span></a>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Association Elykia — Tous droits réservés</span>
+        <span>Fait avec soin pour la communauté</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/" class="whatsapp-float" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+    </svg>
+  </a>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gallery.js"></script>
+</body>
+</html>
