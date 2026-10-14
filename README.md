@@ -149,6 +149,8 @@ partout — il apparaît dans les boutons WhatsApp, l'icône flottante et le pie
 ```
 
 Pour ajouter un membre supplémentaire, copiez-collez une `team-card` complète et adaptez.
+La grille affiche quatre cartes par ligne et centre automatiquement la dernière ligne quand
+elle est incomplète — aucun réglage à faire, quel que soit le nombre de membres.
 
 Photos actuellement en place dans `assets/images/team/` :
 
@@ -162,6 +164,7 @@ Photos actuellement en place dans `assets/images/team/` :
 | `benjamin-gnina.jpeg` | Benjamin GNINA | Responsable de la communication |
 | `wenceslas-bouity.jpeg` | Wenceslas BOUITY | Responsable informatique |
 | `henoc-ngoma.jpeg` | Henoc NGOMA | Responsable des programmes et actions sociales |
+| `premice-apoyolo.jpeg` | Prémice APOYOLO | Responsable des médias |
 
 Évitez les espaces et les accents dans les noms de fichiers : ils compliquent les URL une
 fois le site en ligne.

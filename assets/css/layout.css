@@ -416,10 +416,17 @@
 
 /* ---- TEAM ---- */
 
+/* Equipe : 4 cartes par ligne, les lignes incompletes restent centrees */
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-md);
+}
+
+.team-grid > .team-card {
+  flex: 0 1 calc((100% - 3 * var(--space-md)) / 4);
+  min-width: 232px;
 }
 
 .team-card {
@@ -619,9 +626,11 @@
   .nav-cta { margin: var(--space-sm) 0 0; text-align: center; }
 
   .grid-2, .grid-3, .grid-4, .grid-7,
-  .two-col, .action-section, .team-grid, .footer-grid {
+  .two-col, .action-section, .footer-grid {
     grid-template-columns: 1fr;
   }
+
+  .team-grid > .team-card { flex-basis: 100%; min-width: 0; }
 
   .action-section:nth-child(even) { direction: ltr; }
   .two-col.reversed { direction: ltr; }
@@ -633,12 +642,12 @@
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid > .team-card { flex-basis: calc((100% - var(--space-md)) / 2); }
 }
 
 /* Equipe : 4 par ligne sur grand ecran, 3 des que la largeur se reduit */
-@media (min-width: 1025px) and (max-width: 1140px) {
-  .team-grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 1140px) {
+  .team-grid > .team-card { flex-basis: calc((100% - 2 * var(--space-md)) / 3); }
 }
 
 @media (max-width: 480px) {
