@@ -212,3 +212,26 @@ img {
   .section { padding-block: var(--space-lg); }
   .container { padding-inline: var(--space-sm); }
 }
+
+/* ============================================================
+   COUPURE DU TEXTE
+   Empeche les mots longs (emails, URL, noms de fonctions) de
+   deborder de leur conteneur sur les petits ecrans.
+   ============================================================ */
+
+h1, h2, h3, h4, h5, h6,
+p, li, a, span, strong, blockquote, figcaption, label, td, th {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .team-info { padding: 0.85rem 0.6rem; }
+
+  .team-info h4 { font-size: 0.875rem; }
+
+  .team-info p {
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+  }
+}

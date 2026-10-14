@@ -472,12 +472,15 @@
 
 .team-info h4 {
   font-size: 0.95rem;
+  overflow-wrap: break-word;
   color: var(--color-primary-dark);
   margin-bottom: 0.25rem;
 }
 
 .team-info p {
   font-size: var(--fs-xs);
+  overflow-wrap: break-word;
+  hyphens: auto;
   color: var(--color-text-muted);
   margin-bottom: 0;
   font-family: var(--font-heading);
@@ -630,7 +633,14 @@
     grid-template-columns: 1fr;
   }
 
-  .team-grid > .team-card { flex-basis: 100%; min-width: 0; }
+  .team-grid {
+    gap: var(--space-sm);
+  }
+
+  .team-grid > .team-card {
+    flex-basis: calc((100% - var(--space-sm)) / 2);
+    min-width: 0;
+  }
 
   .action-section:nth-child(even) { direction: ltr; }
   .two-col.reversed { direction: ltr; }
@@ -646,8 +656,12 @@
 }
 
 /* Equipe : 4 par ligne sur grand ecran, 3 des que la largeur se reduit */
-@media (max-width: 1140px) {
+@media (min-width: 1025px) and (max-width: 1140px) {
   .team-grid > .team-card { flex-basis: calc((100% - 2 * var(--space-md)) / 3); }
+}
+
+@media (max-width: 400px) {
+  .team-grid > .team-card { flex-basis: 100%; }
 }
 
 @media (max-width: 480px) {
