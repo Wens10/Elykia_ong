@@ -211,3 +211,21 @@
     transition: none;
   }
 }
+
+/* ============================================================
+   APPARITIONS SUR PETIT ECRAN
+   Les glissements lateraux depassaient de l-ecran avant leur
+   declenchement : sur mobile, tout glisse verticalement.
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .reveal-left,
+  .reveal-right {
+    transform: translateY(24px);
+  }
+
+  .reveal-left.revealed,
+  .reveal-right.revealed {
+    transform: translateY(0);
+  }
+}

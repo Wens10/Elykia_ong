@@ -235,3 +235,17 @@ p, li, a, span, strong, blockquote, figcaption, label, td, th {
     line-height: 1.35;
   }
 }
+
+/* ============================================================
+   GARDE-FOU MOBILE
+   Aucun element ne doit provoquer de defilement horizontal.
+   ============================================================ */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img, svg, video, iframe, table {
+  max-width: 100%;
+}

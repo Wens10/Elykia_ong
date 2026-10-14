@@ -1128,3 +1128,62 @@ textarea.form-control {
   border-color: var(--color-primary);
   color: var(--color-white);
 }
+
+/* ---- AJUSTEMENTS MOBILE ---- */
+
+@media (max-width: 768px) {
+  /* Les libelles longs passent a la ligne plutot que d-elargir la page.
+     Cette regle doit vivre ici : base.css est charge avant et serait ecrase. */
+  .btn {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
+    max-width: 100%;
+  }
+
+  .btn-lg { padding: 0.8rem 1.4rem; }
+
+  /* Cartes : marges interieures resserrees */
+  .card { padding: var(--space-sm); }
+
+  /* Documents et dons : moins de marges, plus de place au texte */
+  .doc-card { padding: 1.1rem; gap: 0.75rem; }
+  .doc-card .doc-icon { width: 38px; height: 38px; }
+
+  .don-method { padding: 1rem; }
+
+  /* Coordonnees : l-icone ne mange plus la largeur */
+  .contact-item { gap: 0.75rem; }
+  .contact-item .icon-circle { width: 44px; height: 44px; }
+  .contact-item .icon-circle [data-lucide] { width: 18px; height: 18px; }
+
+  /* overflow-wrap: anywhere reduit aussi la largeur minimale du bloc,
+     ce que break-word ne fait pas : indispensable pour l-adresse email */
+  .contact-item .contact-text { min-width: 0; flex: 1; }
+  .contact-item .contact-text > * { overflow-wrap: anywhere; }
+
+  /* Tableau des formules : tenir dans la largeur sans defilement */
+  .sponsor-table { font-size: 0.68rem; table-layout: fixed; width: 100%; }
+  .sponsor-table th,
+  .sponsor-table td { padding: 0.45rem 0.2rem; text-align: center; }
+  .sponsor-table th:first-child,
+  .sponsor-table td:first-child { width: 34%; text-align: left; }
+
+  /* Les noms de formules ne doivent jamais etre coupes en deux */
+  .sponsor-table th {
+    font-size: 0.6rem;
+    letter-spacing: 0;
+    white-space: nowrap;
+    overflow-wrap: normal;
+  }
+  .sponsor-table th:first-child { white-space: normal; }
+
+  /* Compte a rebours : quatre blocs doivent tenir sur une ligne */
+  .countdown { gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+}
+
+@media (max-width: 400px) {
+  .countdown-number { font-size: 1.6rem; }
+  .btn { padding: 0.65rem 1rem; font-size: 0.78rem; }
+  .btn-lg { padding: 0.8rem 1.2rem; font-size: 0.8rem; }
+}

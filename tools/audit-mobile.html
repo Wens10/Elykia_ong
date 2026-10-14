@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Audit mobile</title>
+  <style>
+    body { margin: 0; font: 13px/1.4 monospace; background: #222; color: #eee; }
+    iframe { width: 375px; height: 2600px; border: 0; background: #fff; display: block; }
+    pre { margin: 0; padding: 8px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <iframe id="f" title="page auditee"></iframe>
+  <pre id="rapport">en cours…</pre>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const page   = '../' + (params.get('p') || 'index.html');
+    const largeur = params.get('w');
+    const hauteur = params.get('h');
+
+    const f = document.getElementById('f');
+    if (largeur) f.style.width = largeur + 'px';
+    if (hauteur) f.style.height = hauteur + 'px';
+    if (params.get('nu') === '1') document.getElementById('rapport').style.display = 'none';
+
+    f.addEventListener('load', () => {
+      // Neutralise les apparitions pour que les captures soient deterministes
+      if (params.get('anim') === '0') {
+        try {
+          const s = f.contentDocument.createElement('style');
+          s.textContent = '*{animation:none !important;transition:none !important}' +
+            '.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1 !important;transform:none !important}';
+          f.contentDocument.head.appendChild(s);
+        } catch (e) {}
+      }
+
+      setTimeout(() => {
+        let lignes = [];
+        try {
+          const d = f.contentDocument;
+          const vw = d.documentElement.clientWidth;
+          lignes.push('PAGE=' + page.replace('../','') + ' viewport=' + vw + 'px scrollWidth=' + d.documentElement.scrollWidth);
+
+          d.querySelectorAll('body *').forEach(el => {
+            const r = el.getBoundingClientRect();
+            if (r.width === 0 && r.height === 0) return;
+            if (r.right > vw + 1 || r.left < -1) {
+              const brut = el.className;
+              const cls = (brut && brut.baseVal !== undefined ? brut.baseVal : brut) || '';
+              const nom = el.tagName.toLowerCase() +
+                (cls ? '.' + String(cls).trim().split(/\s+/).slice(0, 3).join('.') : '');
+              lignes.push('  ' + nom + ' [' + Math.round(r.left) + '→' + Math.round(r.right) + ']  ' +
+                          (el.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 45));
+            }
+          });
+
+          if (lignes.length === 1) lignes.push('  AUCUN DEBORDEMENT');
+        } catch (e) {
+          lignes = ['ERREUR: ' + e.message];
+        }
+        document.getElementById('rapport').textContent = lignes.join('\n');
+      }, 1400);
+    });
+
+    f.src = page;
+  </script>
+</body>
+</html>

@@ -43,7 +43,8 @@ elykia/
 │       └── team/             ← Photos de l'équipe (dont presidente.jpg)
 │
 ├── tools/
-│   └── generer-feuillage.py ← Redessine hero-garden.svg (voir § 5)
+│   ├── generer-feuillage.py ← Redessine hero-garden.svg (voir § 5)
+│   └── audit-mobile.html    ← Verifie l affichage mobile (voir § 11)
 │
 ├── favicon.ico
 └── README.md
@@ -383,6 +384,42 @@ encore manquantes :
   `assets/images/gallery/concert.jpg`
 - Toutes les pages — liens Facebook et Instagram (`href="#"`) ; une adresse email propre à l'association
   (type `contact@elykia.org`) remplacera à terme celle du responsable de la plateforme
+
+---
+
+### 11. Vérifier l'affichage mobile
+
+`tools/audit-mobile.html` affiche n'importe quelle page dans un cadre de 375 px de large —
+la largeur d'un téléphone courant — et liste en dessous tout élément qui dépasse de l'écran.
+
+Ouvrez-le dans votre navigateur et ajoutez la page à tester :
+
+```
+tools/audit-mobile.html?p=contact.html
+```
+
+Options disponibles dans l'adresse :
+
+| Paramètre | Effet |
+|---|---|
+| `p=contact.html` | page à inspecter (défaut : `index.html`) |
+| `w=320` | largeur simulée en pixels (défaut : 375) |
+| `h=4000` | hauteur du cadre |
+| `anim=0` | désactive les apparitions, utile pour les captures |
+| `nu=1` | masque le rapport |
+
+Le rapport doit afficher **AUCUN DEBORDEMENT**. Un élément listé signifie qu'il sort de
+l'écran : il faut alors le laisser passer à la ligne, réduire ses marges ou autoriser la
+coupure du texte.
+
+Deux pièges rencontrés sur ce site, à garder en tête :
+
+- **L'ordre des feuilles de style compte.** Une règle mobile écrite dans `base.css` est
+  écrasée par `components.css` et `layout.css`, chargés après. Les surcharges de `.btn` et
+  `.card` vivent donc dans `components.css`.
+- **Les apparitions latérales débordent.** Sur mobile, `.reveal-left` et `.reveal-right`
+  glissent verticalement (voir `animations.css`), sinon elles dépassent de l'écran avant
+  de se déclencher.
 
 ---
 

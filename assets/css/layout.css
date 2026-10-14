@@ -1056,3 +1056,13 @@
   .hero-glow,
   .hero-sparkles { animation: none; }
 }
+
+/* ---- RESPIRATION DES SECTIONS SUR MOBILE ---- */
+
+@media (max-width: 768px) {
+  .section-quote { padding-block: var(--space-lg); }
+  .section-quote blockquote { font-size: clamp(1.1rem, 5vw, 1.5rem); }
+  .projet-vedette { padding: var(--space-md) var(--space-sm); }
+  .projet-meta { gap: 0.75rem 1.25rem; }
+  .page-hero { padding-bottom: var(--space-md); }
+}
