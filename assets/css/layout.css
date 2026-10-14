@@ -418,7 +418,7 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-md);
 }
 
@@ -636,8 +636,400 @@
   .team-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* Equipe : 4 par ligne sur grand ecran, 3 des que la largeur se reduit */
+@media (min-width: 1025px) and (max-width: 1140px) {
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
 @media (max-width: 480px) {
   .hero-cta { flex-direction: column; align-items: center; }
   .btn { width: 100%; max-width: 280px; }
   .projet-vedette { padding: var(--space-md); }
+}
+
+/* ============================================================
+   NAVIGATION GROUPÉE (menu déroulant "Notre action")
+   ============================================================ */
+
+.nav-group { position: relative; }
+
+.nav-group-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: rgba(255,255,255,0.88);
+  padding: 0.4rem 0.65rem;
+}
+
+.site-header.scrolled .nav-group-toggle { color: var(--color-text-main); }
+.site-header.scrolled .nav-group-toggle:hover { color: var(--color-primary); }
+
+.nav-group-toggle [data-lucide] {
+  width: 13px;
+  height: 13px;
+  transition: transform var(--transition-fast);
+}
+
+.nav-group.open .nav-group-toggle [data-lucide] { transform: rotate(180deg); }
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  min-width: 290px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-hover);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+}
+
+.nav-group:hover .nav-dropdown,
+.nav-group:focus-within .nav-dropdown,
+.nav-group.open .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-text-main);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.nav-dropdown a span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin-top: 0.15rem;
+  line-height: 1.4;
+}
+
+.nav-dropdown a:hover,
+.nav-dropdown a:focus-visible { background: var(--color-warm-white); color: var(--color-primary-dark); }
+.nav-dropdown a.active { background: rgba(74,124,99,0.08); color: var(--color-primary-dark); }
+
+/* ---- FOOTER 4 COLONNES ---- */
+
+.footer-grid.footer-grid-4 {
+  grid-template-columns: 1.7fr 1fr 1fr 1.2fr;
+  gap: var(--space-md);
+}
+
+@media (max-width: 1024px) {
+  .footer-grid.footer-grid-4 { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .footer-grid.footer-grid-4 { grid-template-columns: 1fr; }
+
+  .nav-group { width: 100%; }
+
+  .nav-group-toggle {
+    width: 100%;
+    justify-content: space-between;
+    color: var(--color-text-main);
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--color-border-light);
+    font-size: 0.9rem;
+  }
+
+  .nav-dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    min-width: 0;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0.25rem 0 0.5rem 0.9rem;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .nav-group:hover .nav-dropdown,
+  .nav-group.open .nav-dropdown { transform: none; }
+
+  .nav-dropdown a { padding: 0.55rem 0; font-size: 0.875rem; }
+  .nav-dropdown a span { display: none; }
+}
+
+/* ---- SOMMAIRE D ANCRES (page-hero) ---- */
+
+.page-anchors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: var(--space-sm);
+}
+
+.page-anchors a {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.85rem;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.page-anchors a:hover,
+.page-anchors a:focus-visible {
+  background: rgba(181,132,62,0.22);
+  border-color: rgba(181,132,62,0.45);
+  color: var(--color-white);
+}
+
+/* ============================================================
+   NAVIGATION MOBILE ET TABLETTE
+   Avec 6 entrees + le bouton de don, la barre horizontale ne tient
+   plus sous 1024px : on bascule sur le menu burger des cette largeur.
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .burger { display: flex; }
+
+  .site-nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem var(--space-md) var(--space-sm);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+    transform: translateY(-110%);
+    opacity: 0;
+    transition: transform var(--transition-normal), opacity var(--transition-normal);
+    gap: 0;
+    border-bottom: 1px solid var(--color-border-light);
+    max-height: calc(100vh - var(--header-h));
+    overflow-y: auto;
+  }
+
+  .site-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-link {
+    color: var(--color-text-main);
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--color-border-light);
+    font-size: 0.9rem;
+  }
+
+  .nav-link::after { display: none; }
+  .nav-link.active { color: var(--color-primary-dark); }
+
+  .nav-cta { margin: var(--space-sm) 0 0; text-align: center; }
+
+  .nav-group { width: 100%; }
+
+  .nav-group-toggle {
+    width: 100%;
+    justify-content: space-between;
+    color: var(--color-text-main);
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--color-border-light);
+    font-size: 0.9rem;
+  }
+
+  .nav-dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    min-width: 0;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0.25rem 0 0.5rem 0.9rem;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .nav-group:hover .nav-dropdown,
+  .nav-group.open .nav-dropdown { transform: none; }
+
+  .nav-dropdown a { padding: 0.55rem 0; font-size: 0.875rem; }
+  .nav-dropdown a span { display: none; }
+}
+
+/* ============================================================
+   HERO « JARDIN D'ÉDEN »
+   Décor entièrement en CSS + un SVG de feuillage généré
+   (assets/images/hero-garden.svg) — aucune photo requise.
+   ============================================================ */
+
+.hero-bg {
+  background-image:
+    radial-gradient(125% 90% at 50% -4%,
+      rgba(245, 228, 183, 0.50) 0%,
+      rgba(234, 217, 176, 0.22) 26%,
+      rgba(181, 132, 62, 0.10) 44%,
+      rgba(181, 132, 62, 0) 62%),
+    radial-gradient(95% 40% at 50% 78%, rgba(222, 168, 80, 0.30) 0%, rgba(181, 132, 62, 0.12) 44%, transparent 74%),
+    radial-gradient(70% 50% at 10% 100%, rgba(114, 169, 138, 0.26) 0%, transparent 66%),
+    radial-gradient(70% 50% at 92% 96%, rgba(74, 124, 99, 0.30) 0%, transparent 68%),
+    linear-gradient(168deg,
+      #0C2016 0%,
+      #15331F 26%,
+      #1F4730 52%,
+      #2B5B41 78%,
+      #35704E 100%);
+  background-color: var(--color-primary-dark);
+}
+
+/* Rayons de soleil partant du haut, très discrets */
+.hero-rays {
+  position: absolute;
+  left: 50%;
+  top: -40%;
+  width: 170%;
+  height: 130%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: repeating-conic-gradient(from 0deg at 50% 30%,
+    rgba(255, 246, 219, 0.055) 0deg 2.4deg,
+    rgba(255, 246, 219, 0) 2.4deg 13deg);
+  -webkit-mask-image: radial-gradient(46% 40% at 50% 30%, #000 0%, rgba(0,0,0,0.30) 46%, transparent 70%);
+  mask-image: radial-gradient(46% 40% at 50% 30%, #000 0%, rgba(0,0,0,0.30) 46%, transparent 70%);
+  animation: hero-rays-turn 120s linear infinite;
+}
+
+@keyframes hero-rays-turn {
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* Halo doré derrière le logo */
+.hero-glow {
+  position: absolute;
+  left: 50%;
+  top: 26%;
+  width: min(760px, 86vw);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background: radial-gradient(circle,
+    rgba(255, 243, 214, 0.26) 0%,
+    rgba(234, 217, 176, 0.12) 35%,
+    rgba(234, 217, 176, 0) 68%);
+  animation: hero-glow-breathe 9s ease-in-out infinite alternate;
+}
+
+@keyframes hero-glow-breathe {
+  from { opacity: 0.75; transform: translate(-50%, -50%) scale(0.97); }
+  to   { opacity: 1;    transform: translate(-50%, -50%) scale(1.04); }
+}
+
+/* Feuillage : palmes et fleurs ancrées en bas */
+.hero-foliage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url('../images/hero-garden.svg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+/* Lucioles */
+.hero-sparkles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2.5px 2.5px at 14% 62%, rgba(255, 240, 200, 0.85), transparent 60%),
+    radial-gradient(2px 2px   at 27% 38%, rgba(234, 217, 176, 0.70), transparent 60%),
+    radial-gradient(3px 3px   at 72% 54%, rgba(255, 240, 200, 0.75), transparent 60%),
+    radial-gradient(2px 2px   at 85% 33%, rgba(234, 217, 176, 0.65), transparent 60%),
+    radial-gradient(2px 2px   at 58% 72%, rgba(255, 240, 200, 0.60), transparent 60%),
+    radial-gradient(2.5px 2.5px at 40% 83%, rgba(234, 217, 176, 0.55), transparent 60%),
+    radial-gradient(2px 2px   at 93% 68%, rgba(255, 240, 200, 0.55), transparent 60%),
+    radial-gradient(2px 2px   at 7%  28%, rgba(234, 217, 176, 0.50), transparent 60%);
+  animation: hero-sparkles-drift 16s ease-in-out infinite alternate;
+}
+
+@keyframes hero-sparkles-drift {
+  from { transform: translate3d(0, 0, 0);        opacity: 0.55; }
+  50%  {                                          opacity: 1; }
+  to   { transform: translate3d(-14px, -22px, 0); opacity: 0.7; }
+}
+
+/* L'habillage sombre reste, mais allégé pour laisser vivre le décor */
+.hero-overlay {
+  z-index: 1;
+  background: linear-gradient(180deg,
+    rgba(8, 24, 15, 0.52) 0%,
+    rgba(12, 32, 21, 0.18) 34%,
+    rgba(10, 28, 18, 0.30) 68%,
+    rgba(8, 22, 14, 0.62) 100%);
+}
+
+.hero-content { z-index: 3; }
+
+/* Raccord doux vers la section suivante */
+/* Voile central : pose le texte au-dessus du feuillage sans l-ecraser */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(58% 48% at 50% 52%,
+    rgba(7, 22, 14, 0.42) 0%,
+    rgba(7, 22, 14, 0.22) 46%,
+    rgba(7, 22, 14, 0) 72%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 72px;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.42) 100%);
+}
+
+@media (max-width: 768px) {
+  .hero-foliage { background-size: 180% auto; background-position: center bottom; }
+  .hero::after { height: 52px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rays,
+  .hero-glow,
+  .hero-sparkles { animation: none; }
 }

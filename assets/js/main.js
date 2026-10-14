@@ -45,9 +45,49 @@
 
   function setActiveLink() {
     const current = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-link[href]').forEach(link => {
+
+    document.querySelectorAll('.nav-link[href], .nav-dropdown a[href]').forEach(link => {
       const href = link.getAttribute('href').split('/').pop().split('#')[0];
       link.classList.toggle('active', href === current);
+    });
+
+    // Le groupe déroulant reste surligné quand on est sur une de ses pages
+    document.querySelectorAll('.nav-group').forEach(group => {
+      const inside = group.querySelector('.nav-dropdown a.active');
+      const toggle = group.querySelector('.nav-group-toggle');
+      if (toggle) toggle.classList.toggle('active', Boolean(inside));
+    });
+  }
+
+  /* ---- MENU DÉROULANT ---- */
+
+  function closeDropdowns(except) {
+    document.querySelectorAll('.nav-group.open').forEach(group => {
+      if (group === except) return;
+      group.classList.remove('open');
+      const toggle = group.querySelector('.nav-group-toggle');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function initDropdowns() {
+    document.querySelectorAll('.nav-group').forEach(group => {
+      const toggle = group.querySelector('.nav-group-toggle');
+      if (!toggle) return;
+
+      toggle.addEventListener('click', e => {
+        e.stopPropagation();
+        const isOpen = group.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        closeDropdowns(group);
+      });
+
+      group.querySelectorAll('.nav-dropdown a').forEach(link => {
+        link.addEventListener('click', () => {
+          closeDropdowns();
+          closeNav();
+        });
+      });
     });
   }
 
@@ -86,20 +126,24 @@
 
   /* ---- COMPTE À REBOURS ---- */
 
+  /* Date par défaut de la Grande Célébration.
+     Pour une autre échéance : <div class="countdown" data-date="AAAA-MM-JJ"></div> */
+  const DEFAULT_EVENT_DATE = '2027-09-04';
+
   function initCountdown() {
     const containers = document.querySelectorAll('.countdown');
     if (!containers.length) return;
 
-    const target = new Date('2026-09-05T00:00:00').getTime();
-
     function update() {
-      const diff = target - Date.now();
+      containers.forEach(c => {
+        const date = c.dataset.date || DEFAULT_EVENT_DATE;
+        c.innerHTML = renderUnits(new Date(date + 'T00:00:00').getTime() - Date.now());
+      });
+    }
 
+    function renderUnits(diff) {
       if (diff <= 0) {
-        containers.forEach(c => {
-          c.innerHTML = '<p style="color:var(--color-gold);font-family:var(--font-heading);font-weight:700;">Événement passé</p>';
-        });
-        return;
+        return '<p style="color:var(--color-gold);font-family:var(--font-heading);font-weight:700;">Événement passé</p>';
       }
 
       const days    = Math.floor(diff / 86400000);
@@ -107,7 +151,7 @@
       const minutes = Math.floor((diff % 3600000) / 60000);
       const seconds = Math.floor((diff % 60000) / 1000);
 
-      const html = [
+      return [
         { n: days,    l: 'Jours' },
         { n: hours,   l: 'Heures' },
         { n: minutes, l: 'Min' },
@@ -118,8 +162,6 @@
           <span class="countdown-label">${u.l}</span>
         </div>
       `).join('');
-
-      containers.forEach(c => { c.innerHTML = html; });
     }
 
     update();
@@ -143,22 +185,29 @@
     initReveal();
     initSmoothScroll();
     initCountdown();
+    initDropdowns();
 
     if (burger) {
       burger.addEventListener('click', toggleNav);
     }
 
     document.addEventListener('click', e => {
+      if (!e.target.closest('.nav-group')) closeDropdowns();
+
       if (nav && nav.classList.contains('open') &&
           !nav.contains(e.target) && burger && !burger.contains(e.target)) {
         closeNav();
       }
     });
 
-    document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeNav));
+    document.querySelectorAll('.nav-link:not(.nav-group-toggle)')
+      .forEach(l => l.addEventListener('click', closeNav));
 
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeNav();
+      if (e.key === 'Escape') {
+        closeDropdowns();
+        closeNav();
+      }
     });
   });
 
