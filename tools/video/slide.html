@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Diapositive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Montserrat:wght@400;600;700;800&family=Lato:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/variables.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <style>
+    html, body { margin: 0; height: 1080px; overflow: hidden; }
+
+    .scene {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .scene .hero-bg,
+    .scene .hero-foliage,
+    .scene .hero-glow { position: absolute; inset: 0; transform: none; }
+
+    .scene .hero-rays { left: 50%; top: -30%; width: 160%; height: 130%; }
+
+    .scene-content {
+      position: relative;
+      z-index: 5;
+      padding: 0 8rem;
+      max-width: 1400px;
+    }
+
+    .scene-logo { height: 260px; width: auto; margin-bottom: 2.5rem; filter: drop-shadow(0 8px 30px rgba(0,0,0,0.35)); }
+
+    .scene-titre {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 6rem;
+      line-height: 1.05;
+      color: #fff;
+      margin: 0 0 1.5rem;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.35);
+    }
+
+    .scene-sous {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 2rem;
+      color: rgba(255,255,255,0.82);
+      margin: 0;
+    }
+
+    .scene-trait {
+      width: 90px;
+      height: 4px;
+      background: var(--color-gold);
+      border-radius: 999px;
+      margin: 2.5rem auto;
+    }
+
+    .scene-infos {
+      margin-top: 3rem;
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="hero-bg"></div>
+    <div class="hero-rays"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-foliage"></div>
+
+    <div class="scene-content">
+      <img id="logo" class="scene-logo" src="../../assets/images/logo.png" alt="">
+      <h1 class="scene-titre" id="titre">Elykia</h1>
+      <div class="scene-trait"></div>
+      <p class="scene-sous" id="sous">Une famille pour ceux qui en ont besoin</p>
+      <div class="scene-infos" id="infos"></div>
+    </div>
+  </div>
+
+  <script>
+    const p = new URLSearchParams(location.search);
+    if (p.get('t'))  document.getElementById('titre').textContent = p.get('t');
+    if (p.get('s'))  document.getElementById('sous').textContent  = p.get('s');
+    if (p.get('i'))  document.getElementById('infos').textContent = p.get('i');
+    if (p.get('nologo') === '1') document.getElementById('logo').style.display = 'none';
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Capture</title>
+  <style>
+    html, body { margin: 0; padding: 0; background: #fff; overflow: hidden; }
+    iframe { width: 1920px; height: 1080px; border: 0; display: block; }
+  </style>
+</head>
+<body>
+  <iframe id="f"></iframe>
+  <script>
+    /* Cadre de capture 1920x1080 pour la video de presentation.
+       Parametres : p=page.html#ancre   dy=decalage   y=position absolue
+
+       Chrome ignore le defilement programme au moment de la capture :
+       on remonte donc le contenu par une marge negative, ce qui donne
+       le meme cadrage tout en gardant l en-tete visible. */
+
+    const params = new URLSearchParams(location.search);
+    const page   = params.get('p') || 'index.html';
+    const decal  = parseInt(params.get('y') || '0', 10);
+    const dy     = parseInt(params.get('dy') || '0', 10);
+    const f = document.getElementById('f');
+
+    f.addEventListener('load', () => {
+      try {
+        const d = f.contentDocument;
+
+        const style = d.createElement('style');
+        style.textContent =
+          '*{animation:none !important;transition:none !important}' +
+          '.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1 !important;transform:none !important}' +
+          '.whatsapp-float{display:none !important}';
+        d.head.appendChild(style);
+
+        const placer = () => {
+          d.body.style.marginTop = '0px';
+
+          let y = decal;
+          if (!y) {
+            const ancre = page.includes('#') ? page.split('#')[1] : '';
+            const cible = ancre ? d.getElementById(ancre) : null;
+            if (cible) y = cible.getBoundingClientRect().top + f.contentWindow.scrollY - 80;
+          }
+          y = Math.max(0, (y || 0) + dy);
+
+          f.contentWindow.scrollTo(0, 0);
+          d.body.style.marginTop = (-y) + 'px';
+
+          // L en-tete prend son apparence « page defilee » (fond clair)
+          const entete = d.querySelector('.site-header');
+          if (entete && y > 30) {
+            entete.classList.add('scrolled');
+            entete.classList.remove('transparent');
+          }
+        };
+
+        // Rejoue : les images qui finissent de charger decalent la mise en page
+        setTimeout(placer, 900);
+        setTimeout(placer, 2600);
+        setTimeout(placer, 4600);
+
+        if (params.get('debug') === '1') {
+          setTimeout(() => {
+            const z = document.createElement('pre');
+            z.id = 'diag';
+            z.textContent = 'marge=' + d.body.style.marginTop +
+                            ' | hauteur=' + d.documentElement.scrollHeight;
+            document.body.appendChild(z);
+          }, 6000);
+        }
+      } catch (e) {}
+    });
+
+    f.src = '../../' + page.split('#')[0];
+  </script>
+</body>
+</html>

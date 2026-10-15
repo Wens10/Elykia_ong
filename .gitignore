@@ -1,0 +1,7 @@
+# Fichiers intermediaires de la video (regenerables : voir tools/video/)
+tools/video/build/
+
+# Systeme
+Thumbs.db
+desktop.ini
+.DS_Store

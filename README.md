@@ -42,9 +42,13 @@ elykia/
 │       ├── gallery/          ← Vos photos d'actions
 │       └── team/             ← Photos de l'équipe (dont presidente.jpg)
 │
+├── media/
+│   └── elykia-presentation.mp4  ← Video de presentation (voir § 12)
+│
 ├── tools/
 │   ├── generer-feuillage.py ← Redessine hero-garden.svg (voir § 5)
-│   └── audit-mobile.html    ← Verifie l affichage mobile (voir § 11)
+│   ├── audit-mobile.html    ← Verifie l affichage mobile (voir § 11)
+│   └── video/               ← Chaine de fabrication de la video (§ 12)
 │
 ├── favicon.ico
 └── README.md
@@ -379,9 +383,8 @@ encore manquantes :
   le Mobile Money)
 - `a-propos.html` — nom de la présidente et son message
 - `realisations.html` — date d'arrêté des chiffres
-- `evenements.html` — date de la Grande Célébration 2027 (seule l'année est connue ;
-  voir §6), salle et programmation du concert du 22 novembre 2026, visuel
-  `assets/images/gallery/concert.jpg`
+- `evenements.html` — date de la Grande Célébration 2027 (seule l'année est connue ; voir §6).
+  Le concert du 22 novembre 2026 est complet : affiche, horaire et lieu sont en place.
 - Toutes les pages — liens Facebook et Instagram (`href="#"`) ; une adresse email propre à l'association
   (type `contact@elykia.org`) remplacera à terme celle du responsable de la plateforme
 
@@ -420,6 +423,48 @@ Deux pièges rencontrés sur ce site, à garder en tête :
 - **Les apparitions latérales débordent.** Sur mobile, `.reveal-left` et `.reveal-right`
   glissent verticalement (voir `animations.css`), sinon elles dépassent de l'écran avant
   de se déclencher.
+
+---
+
+### 12. La vidéo de présentation
+
+`media/elykia-presentation.mp4` — 1 min 37, 1920 × 1080, voix off française.
+Dix séquences : l'identité, le site, l'équipe, les programmes, les réalisations, les
+événements, le partenariat, la transparence, le don, et un appel final.
+
+Tout est fabriqué à partir du site lui-même : les visuels sont des captures réelles des
+pages, les titres reprennent les polices et les couleurs de la charte, et la voix est une
+synthèse neuronale française (Denise).
+
+**Pour la régénérer** après une évolution du site :
+
+```bash
+# une seule fois : environnement isole pour la synthese vocale
+python -m venv .venv-voix
+.venv-voix\Scripts\pip install edge-tts
+
+.venv-voix\Scripts\python tools/video/1-narration.py   # voix off + build/scenes.json
+python tools/video/2-montage.py                          # capture, titre et assemble
+```
+
+L'environnement isolé évite d'installer quoi que ce soit dans le Python du système.
+Le montage, lui, n'utilise que la bibliothèque standard.
+
+Il faut **ffmpeg** et **Google Chrome** installés. Le dossier `tools/video/` contient :
+
+| Fichier | Rôle |
+|---|---|
+| `1-narration.py` | texte de chaque séquence et génération de la voix off |
+| `2-montage.py` | captures, bandeaux, mouvement d'image, fondus, assemblage |
+| `slide.html` | diapositives d'ouverture et de fin, au décor du site |
+| `capture.html` | cadre 1920 × 1080 qui photographie une page à un endroit précis |
+| `lower-third.html` | bandeau de titre, fond transparent |
+
+**Pour changer le texte dit à l'écran**, modifiez la liste `SCENES` en haut de
+`1-narration.py` : chaque entrée donne le texte lu, le titre et le sous-titre affichés.
+La durée de chaque séquence s'ajuste automatiquement à la longueur de la phrase.
+
+Les fichiers intermédiaires vont dans `tools/video/build/`, ignoré par Git.
 
 ---
 
